@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
-export const pingHandler = (req: Request, res: Response) => {
-  res.json({
+export const pingHandler = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  res.status(200).json({
     msg: "Pong",
   });
 };
