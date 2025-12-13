@@ -1,9 +1,17 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
+import fs from "fs/promises";
+import { InternalServerError } from "../utils/errors/app.error";
 export const pingHandler = async (
   req: Request,
-  res: Response
-): Promise<void> => {
-  res.status(200).json({
-    msg: "Pong",
-  });
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    await fs.readFile("sample");
+    res.status(200).json({
+      msg: "hello",
+    });
+  } catch (error) {
+    throw new InternalServerError("Something Went Wrong.");
+  }
 };
