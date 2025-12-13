@@ -1,13 +1,12 @@
 import express from "express";
+import { serverConfig } from "./config/index.js";
+import pingRouter from "./routers/ping.router.js";
+
 const app = express();
 
-const PORT = 4000;
+app.use("/ping", pingRouter);
 
-app.get("/ping", (req, res) => {
-  res.send("Pong");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running at port ${PORT}.`);
+app.listen(serverConfig.PORT, () => {
+  console.log(`Server is running at port ${serverConfig.PORT}.`);
   console.log(`Press ctrl + c to stop the server.`);
 });
