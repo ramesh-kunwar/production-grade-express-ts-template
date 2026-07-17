@@ -1,7 +1,7 @@
-import express from "express";
+import express, { Router } from "express";
 import pingRouter from "./ping.router";
 
-const v2Router = express.Router();
+const v2Router: Router = express.Router();
 
 v2Router.use("/ping", pingRouter);
 

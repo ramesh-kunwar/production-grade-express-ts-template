@@ -1,6 +1,6 @@
-import express from "express";
+import express, { Router } from "express";
 import { pingHandler } from "../../controllers/ping.controller";
-const pingRouter = express.Router();
+const pingRouter: Router = express.Router();
 
 pingRouter.get("/", pingHandler);
 pingRouter.get("/health", (req, res) => {
