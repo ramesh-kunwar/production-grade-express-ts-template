@@ -1,9 +1,11 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
-  "include": [ // directories that will be included during compilation
+  "include": [
+    // directories that will be included during compilation
     "src/**/*"
   ],
-  "exclude": [ // directories that will be exclude during compilation
+  "exclude": [
+    // directories that will be exclude during compilation
     "node_modules"
   ],
   "compilerOptions": {
@@ -41,7 +43,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-"esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
   }
 }

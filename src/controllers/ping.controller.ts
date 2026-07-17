@@ -5,7 +5,7 @@ import logger from "../config/logger";
 export const pingHandler = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   logger.info("Ping request received. ");
 

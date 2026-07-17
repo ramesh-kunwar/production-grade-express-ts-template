@@ -5,7 +5,7 @@ export const genericErrorHandler = (
   err: AppError,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   //
 

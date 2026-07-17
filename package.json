@@ -9,7 +9,20 @@
     "start": "tsx src/server.ts",
     "dev": "nodemon --exec tsx src/server.ts",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -25,12 +38,19 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
+    "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.1",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
     "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
     "nodemon": "^3.1.14",
+    "prettier": "^3.9.5",
     "tsx": "^4.23.0",
-    "typescript": "^7.0.2"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.63.0"
   },
   "packageManager": "pnpm@10.33.0"
 }
